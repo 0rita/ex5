@@ -1,0 +1,315 @@
+/*Ana Rita Ribeiro*/
+
+/*---------------------------------*/
+
+/* recursos--------------------------- */
+
+
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face */
+@font-face {
+    font-family: "Montserrat";
+    src:
+      url("../fonts/Montserrat-VariableFont_wght.ttf") 
+  }
+
+  @font-face {
+    font-family: "Blinker";
+    src:
+      url("../fonts/Blinker-Bold.ttf") 
+  }
+  
+/* fayer reset de todas as propriedades  */
+/* folha externa (reset.css) ou @import (@import url("my-imported-styles.css");) */
+
+/* Seletor universal*/
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* nao esquecer que o HTML começa com um tag Html */
+html,
+body{
+    /* (repetir padding e margem..?) */
+    width: 100%;
+    height: 100%;
+    font-size: 16pt; /* isto define o tamanho EM de base (root). Pensar em baseline grid */
+    background-color:rgb(159, 181, 169);
+}
+
+
+/* preencher o posicionamento (se nao depois nao alinha) */
+#page{
+    display: block;
+    position: relative;
+    width: 100%;
+     height: 100vh; /*é 100% do body///se aumentar a percentagem liga o scroll, e se quiser enconder meto o overflow hidden */
+    /* o (vh (viewport hight)) é uma medida nova que obdece diretamente ao viewport */
+     background-color:rgb(159, 181, 169);
+}
+
+
+header{
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    font-family: "Blinker", 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-transform: uppercase; /*maiusculas */
+}
+
+figure{
+    display: block;
+    position: relative;
+    width: 100%; /* (ou 100 vh so neste caso) */
+    height: 100%;
+    background-color:rgb(205, 224, 208);
+    }
+    
+    h1{
+        /* top: 35%; */
+        display: block;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        /*font-size: 3em; /* EM é uma medida relativa. É relativo ao "pai". REM sao relativos ao HTML root element size ("mae") */
+        font-size: 15vw; /* o texto aumenta e diminui (é dinamico e relaciona-se ao tamanho do pai) */
+    color: white; 
+    }
+
+
+    main{
+        display: block;
+        position: relative;
+        width: 100%;
+        padding-top: 50px;
+        margin-top: 50;
+        background-color:rgb(159, 181, 169);
+    }
+
+    .texto{
+        width: 100%;
+        max-width: 2000px;
+        margin: 0 auto;
+      padding-bottom: 20;
+    }
+    
+    
+    
+    
+    
+    h2{
+        display: block; 
+        margin-top: 40px;
+        margin-left: 100px;
+        margin-right: 100px;
+        border: 3px solid rgb(142, 115, 193);
+    padding: 10 10 10 10px;
+        text-align: center;
+        color: white;
+        font-family: "Blinker";
+        font-size: 25px;  
+    }
+    
+    h2 a{
+        color: white;
+        text-decoration: none;
+    }
+    
+    h2 a:hover{
+        color: rgb(142, 115, 193);
+    }
+    
+    
+    
+    .texto p{
+        font-size: 18px;
+        text-align: left;
+        padding-top: 10px;
+        padding-left: 100px;
+        padding-right: 100px;
+        color: white;
+        font-family: "Montserrat";
+        font-size: 12px;
+    }
+    
+    footer{
+        position: relative;
+        text-align: center;
+        padding: 1%;
+        color:white;
+        background-color:rgb(142, 115, 193);
+        margin-top: 100px;
+    }
+
+
+/* nav---------------------------------------------- */
+nav{
+    display: block;
+    position: relative;
+    float:right; /* evitar ou usar economicamente */
+    width: 30%;
+    min-width: 200px;
+    max-width: 350px; /* o menu diminui e aumenta so isto */
+    height: 3em;
+    background-color:rgb(142, 115, 193);
+    text-align: center;
+    z-index: 10; /* é tipo uma camada. Manda o nav para cima (se for -10 manda para baixo) */
+ box-sizing: border-box; 
+}
+
+/* nav:hover{
+    background-color: aquamarine;
+} */
+
+
+a {
+    display: block;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    /* cor texto submenu */
+  }
+
+  
+a:hover {
+    color: rgb(164, 189, 174);
+}
+
+
+nav > p { /* so afeta o 1 filho (o 1 paragrafo) */
+    /* margin-bottom: 0.5em; */
+    margin: 0.5em 1.5em; 
+    color: rgb(255, 255, 255);
+    /* cor de "menu" */
+}
+
+ul{
+    display: none; 
+    position: absolute;
+    width: 100%;
+    font-family: "Blinker";
+    text-align: left;
+    text-transform: none;
+    font-size: 1rem;
+    letter-spacing: 0.075em;
+    font-weight: 600; 
+    list-style: none;
+    flex-flow: column;
+    background-color:rgb(142, 115, 193);
+    /* cor de fundo submenu */
+}
+
+
+li{
+    line-height: 2em;
+    border-top: 2px solid;
+    padding: 5px;
+    color: rgb(159, 181, 169);
+    /* cor barras submenu */
+}
+
+
+nav:hover ul{ /* aspeto de um ul filho de um nav que tem um hover */
+    display: block;
+}
+/* end nav---------------------------------------------- */
+
+
+
+
+
+
+@media screen and (min-width: 600px) {/* muda o media- muda de comportamento */
+    html, body{ /* serve para (adaptar a outros media) se o ecra for maior (que 600px neste caso) mete uma cor de fundo */
+        background-color:rgb(159, 181, 169);
+    }
+
+    #page{
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+    }
+
+    nav{ 
+        display: block;
+        position: relative;
+        float: none;
+        width: 100%;
+        text-align: left;
+        background-color: none;
+        min-width: 100%; 
+        padding-left: 20;
+        /* margin: 0; */
+    }
+
+    nav p{
+        display: none; 
+        max-width: 25%;
+    }
+
+    nav ul{
+        display: inline-block;
+        width: 75%;
+        background-color: none;
+    }
+
+    nav ul, li{ 
+        display: inline-block;
+        border: none;
+        background-color: none;
+        padding-right: 1.5em;
+    } 
+    
+    h1{
+         top:50%; 
+        display: block;
+        position: absolute;
+       /* EM é uma medida relativa. É relativo ao "pai". REM sao relativos ao HTML root element size ("mae") */
+        font-size: 13vw; /* o texto aumenta e diminui (é dinamico e relaciona-se ao tamanho do pai) */
+    }
+
+
+
+
+    main{
+        height: 80vh;
+       
+    }
+
+    .texto{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        padding-top: 70px;
+        
+    }
+    
+    .texto1 {
+        grid-column: 1/3;
+     
+    }
+    
+    .texto2 {
+        grid-column: 3/5;
+    }
+
+ a, h2, .texto > p{
+    color: rgb(255, 255, 255);
+text-align: center;
+}
+
+footer{
+    position: relative;
+    text-align: center;
+    padding: 1%;  
+}
+}
+
+
+
+
+
+
+
+
